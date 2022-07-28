@@ -3,7 +3,8 @@ This is a student management system using python and MySQL, This program contain
 
 # ScreenShot
 
-![Student](https://user-images.githubusercontent.com/69015017/179991468-4c747ae0-b451-4346-8e0a-65aceb3ceee9.JPG)
+![Student](https://user-images.githubusercontent.com/69015017/181491129-42b9b77e-29f4-4066-9707-5c2bfe8d73ca.JPG)
+
 
 # Hardware Requirements
 
