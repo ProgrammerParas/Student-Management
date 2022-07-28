@@ -41,18 +41,24 @@ while True:
 
     def add_student():
         urollno = input("Enter Roll No.: ")
-        ufname = input("Enter Father Name: ")
-        umname = input("Enter Mother Name: ")
-        usname = input("Enter Student Name: ")
-        udob = input("Enter Date Of Birth: ")
-        ugen = input("Enter Gender: ")
-        ustream = input("Enter Stream: ")
-        cquery = "INSERT INTO student_data(rollno, fname, mname, sname, dob, gender, stream) VALUES({}, '{}', '{}', '{}', '{}', '{}', '{}')".format(
-            urollno, ufname, umname, usname, udob, ugen, ustream)
-        cquery2 = "SELECT * FROM student_data"
-        cur.execute(cquery, cquery2)
-        con.commit()
-        print("STUDENT ADDED")
+        if urollno.isnumeric():
+            ufname = input("Enter Father Name: ")
+            if ufname.isalpha():
+                umname = input("Enter Mother Name: ")
+                usname = input("Enter Student Name: ")
+                udob = input("Enter Date Of Birth: ")
+                ugen = input("Enter Gender: ")
+                ustream = input("Enter Stream: ")
+                cquery = "INSERT INTO student_data(rollno, fname, mname, sname, dob, gender, stream) VALUES({}, '{}', '{}', '{}', '{}', '{}', '{}')".format(
+                    urollno, ufname, umname, usname, udob, ugen, ustream)
+                cquery2 = "SELECT * FROM student_data"
+                cur.execute(cquery, cquery2)
+                con.commit()
+                print("STUDENT ADDED")
+            else:
+                print("Inavalid")
+        else:
+            print("Invalid")
 
     def view_sdata():
         q2 = "SELECT * FROM student_data"
